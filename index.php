@@ -4,10 +4,12 @@ session_start();
 require ('vendor/autoload.php');
 $GLOBALS['routes'] = require('config/routes.php');
 
+use Tracy\Debugger;
+Debugger::enable();
+
 // Initilize a loader
 $loader = new Nette\Loaders\RobotLoader;
 $loader->addDirectory('modules');
-$loader->addDirectory('themes');
 $loader->addDirectory('nui');
 $loader->addDirectory('config');
 

@@ -9,6 +9,7 @@
         "nette/http": "^2.4",
         "delight-im/auth": "^5.0",
         "latte/latte": "^2.4",
-        "nette/forms": "^2.4"
+        "nette/forms": "^2.4",
+        "tracy/tracy": "^2.4"
     }
 }
