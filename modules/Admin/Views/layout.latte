@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    
+    <body>
+        {foreach $reflect->getFlashMessages() as $message}
+            <div class="flash flash-{$message->type}">{$message->message}</div>
+        {/foreach}
+        
+        {include content}
+    </body>
+</html>

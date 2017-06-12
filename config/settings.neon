@@ -1,0 +1,18 @@
+app:
+# Application mode [development/production]
+    lang: cs-CZ
+    devmode: true
+    
+classes:
+    success: success
+    error: error
+    warning: warning
+
+database:
+    driver: pdo_mysql
+    host: localhost
+    username: root
+    password:
+    dbname: naon
+
+    entities: database

@@ -1,0 +1,14 @@
+{
+    "require": {
+        "symfony/routing": "^3.3",
+        "nette/robot-loader": "^3.0",
+        "symfony/http-foundation": "^3.3",
+        "doctrine/orm": "^2.5",
+        "nette/neon": "^2.4",
+        "nette/di": "^2.4",
+        "nette/http": "^2.4",
+        "delight-im/auth": "^5.0",
+        "latte/latte": "^2.4",
+        "nette/forms": "^2.4"
+    }
+}

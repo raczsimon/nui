@@ -1,0 +1,5 @@
+loginSuccess: "Byl jsi úspěšně přihlášen."
+wrongEmailAdress: "Špatná e-mailová adresa."
+wrongPassword: "Špatné heslo"
+emailNotVerified: "Nepotvrzená e-mailová adresa."
+tooManyRequests: "Příliš mnoho požadavků."
