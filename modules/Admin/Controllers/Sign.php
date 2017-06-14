@@ -11,41 +11,43 @@ use Delight\Auth\TooManyRequestsException;
 
 class Sign extends Middleware
 {
+    /**
+     * Try login user
+     * If error -> error message
+     * @param string $email Email
+     * @param string $password Password
+     * @return void
+     */
     public function signIn($email, $password)
     {
         try {
             $this->auth->login($_POST['email'], $_POST['password']);
-            
-            $this->flashMessage(
-                $this->lang->admin->loginSuccess, 
-                $this->config->main->classes['success']
-            );
+            $this->flashShortcut("loginSuccess", "success");
         }
         catch (InvalidEmailException $e) {
-            $this->flashMessage(
-                $this->lang->admin->wrongEmailAddress, 
-                $this->config->main->classes['error']
-            );
+            $this->flashShortcut("wrongEmailAddress", "error");
         }
         catch (InvalidPasswordException $e) {
-            $this->flashMessage(
-                $this->lang->admin->wrongPassword, 
-                $this->config->main->classes['error']
-            );
+            $this->flashShortcut("wrongPassword", "error");
         }
         catch (EmailNotVerifiedException $e) {
-            $this->flashMessage(
-                $this->lang->admin->emailNotVerified, 
-                $this->config->main->classes['error']
-            );
+            $this->flashShortcut("emailNotVerified", "error");
         }
         catch (TooManyRequestsException $e) {
-            $this->flashMessage(
-                $this->lang->admin->tooManyRequests, 
-                $this->config->main->classes['error']
-            );
+            $this->flashShortcut("tooManyRequests", "error");
         }
-        
+
         $this->redirect('admin');
     }
+    
+    /**
+     * Shortcut for flash messages...
+     */
+    private function flashShortcut($message, $type)
+    {
+           $this->flashMessage(
+                $this->lang->admin->$message 
+                $this->config->main->classes[$type]
+            );
+    } 
 }
